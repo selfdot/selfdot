@@ -1,0 +1,40 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xmlns:og" => "http://ogp.me/ns#"}
+  %head
+    %link{:href => "//fonts.googleapis.com/css?family=Lato:100,300,900", :rel => "stylesheet", :type => "text/css"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "self.", :property => "og:title"}/
+    %meta{:content => "https://selfdot.org", :property => "og:url"}/
+    %meta{:content => image_url("og.image.png"), :property => "og:image"}/
+    %meta{:content => "self.", :property => "og:site_name"}/
+    %meta{:content => "things", :property => "og:description"}/
+    %meta{:content => "things", :name => "description"}/
+    %title= @title
+    = csrf_meta_tags
+    = javascript_include_tag "application"
+    = stylesheet_link_tag "application", :media => "all"
+  %body{"data-spy" => "scroll", "data-target" => ".navbar"}
+    -# = yield :nav
+    .top_block
+      .container
+        .row
+          .col-md-12
+            %h1
+              %span{style: "font-weight: 900;"}> self.
+              org
+              %ul.tag-line.lead{style: "line-height: 200%;"}
+                %li conference •
+                %li training •
+                %li coworking
+
+    = render partial: "shared/color_line"
+
+    = render partial: "shared/flashes"
+    = yield
+
+    .container
+      .row
+        .col-md-12
+          %a{:href => "http://twitter.com/selfdotorg"}
+            = image_tag "twitter.png", {class: "footer-twitter"}

@@ -1,0 +1,96 @@
+.speaker-img
+  width: 200px
+  height: 200px
+  overflow: hidden
+  margin: 0 auto
+
+  img
+    position: relative
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 100%
+
+.main-page-speaker
+  padding-top: 60px
+  padding-bottom: 30px
+  border-radius: 10px
+  height: 475px
+
+  &:hover
+    background-color: $orange
+
+  a
+    text-decoration: none
+
+.speaker-session-row
+  padding-top: 38px
+  padding-bottom: 30px
+  border-bottom: 1px solid $red
+
+  &:first-child
+    padding-top: 0
+
+  &:last-child
+    border: none
+
+  .about-speaker
+    color: $purple
+    padding-top: 20px
+
+  .visible-md-block
+    &.speaker-img
+      margin: 0 0 0 15px
+
+  .session
+    ul
+      list-style: disc
+
+      ul
+        list-style: square
+
+.nav-wrapper
+  height: 310px
+  overflow-y: scroll
+
+.speaker-nav
+  padding: 15px
+  background-color: $white
+  border-radius: 6px
+  box-shadow: 0 1px 4px rgba(0,0,0,.65)
+  height: 381px
+  overflow: hidden
+
+  li
+    padding: 0
+    font-size: 18px
+
+    i
+      font-size: 14px
+      color: $purple
+
+  &.affix
+    position: fixed
+    top: 60px
+
+.speaker-nav li
+  padding: 0
+
+.nav-list
+  li>a
+    font-family: $font-family
+    font-weight: 300
+    color: $green
+    padding: 3px 0
+    line-height: 150%
+
+.schedule
+
+  .phone-schedule
+    text-align: left
+
+    h5
+      padding-top: 20px
+
+    ul
+      padding: 0

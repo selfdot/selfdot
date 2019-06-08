@@ -1,0 +1,85 @@
+= render partial: "shared/header", event: @event
+
+.mid_block
+  .container
+    .row
+      .col-md-12
+        %p
+          We're looking for 45 minute long talks on both technical and people topics. This means anything from
+          = succeed "," do
+            %span.bold web
+          = succeed ", and" do
+            %span.bold mobile
+          %span.bold back end concurrent systems
+          to talks about
+          = succeed "," do
+            %span.bold accessibility
+          = succeed "," do
+            %span.bold team communication
+          = succeed ", and" do
+            %span.bold inclusivity
+          = succeed "." do
+            %span.bold mental health
+          If you need inspiration, check out
+          = link_to "last year's", event_sessions_path(Event.last_year)
+          talks!
+        %p= "Submissions close #{@event.submissions_end.strftime("%B %e at %l:%M:%S%P %Z")} and submitters will be notified of the panel's decision on or before #{@event.sessions_published.strftime("%B %e")}."
+        %p
+          All speakers will receive a free ticket to the conference. We are happy to talk about covering travel & accommodation expenses and can help up to $600. We are a small conference so this will be needs-based. Please reach out to
+          = link_to "speakers@selfconference.org", "mailto:speakers@selfconference.org"
+          to discuss.
+        %p All sessions are anonymized and then selected by a panel of volunteers. Please refrain from using identifying information in your titles, abstracts, and notes to the panel.
+
+        - if speaker_signed_in?
+          %h4 Your sessions
+          .pull-right
+            - if @event.submissions_open?
+              = link_to new_accounts_session_path do
+                .btn.button.orange-button Submit Talk
+          - if @sessions.empty?
+            No sessions yet!
+          - else
+            %table.datatable.table.table-striped.table-bordered
+              %thead
+                %tr
+                  %th Title
+                  %th Abstract
+                  %th Type
+                  %th Notes
+                  %th.actions
+              %tbody
+                - @sessions.each do |session|
+                  %tr
+                    %td= session.name
+                    %td= simple_format session.abstract
+                    %td= session.talktype
+                    %td= simple_format session.notes
+                    %td.actions
+                      %btn= link_to "Edit", edit_accounts_session_path(session) if @event.submissions_open?
+                      %btn= link_to "Delete", accounts_session_path(session), method: :delete, data: { confirm: 'Are you sure?' }
+
+          - unless @talks.empty?
+            %h4 Your talks
+            %table.datatable.table.table-striped.table-bordered
+              %thead
+                %tr
+                  %th Title
+                  %th Abstract
+                  %th Event
+                  %th Notes
+                  %th.actions
+              %tbody
+                - @talks.each do |session|
+                  %tr
+                    %td= session.name
+                    %td= simple_format session.abstract
+                    %td= "#{session.event.name} #{session.event.start_date.strftime("%Y")}"
+                    %td= simple_format session.notes
+                    %td.actions
+                      %btn= link_to "View", session_path(session)
+
+        - else
+          %p.well
+            You'll need to
+            =link_to "login", new_speaker_session_path
+            in order to see, edit, or submit talks. :)
