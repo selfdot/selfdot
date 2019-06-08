@@ -6,11 +6,11 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "self.", :property => "og:title"}/
     %meta{:content => "https://selfdot.org", :property => "og:url"}/
-    %meta{:content => image_url("og.image.png"), :property => "og:image"}/
+    %meta{:content => image_url("self.avatar.png"), :property => "og:image"}/
     %meta{:content => "self.", :property => "og:site_name"}/
-    %meta{:content => "things", :property => "og:description"}/
-    %meta{:content => "things", :name => "description"}/
-    %title= @title
+    %meta{:content => "Tech literacy for everyone", :property => "og:description"}/
+    %meta{:content => "Tech literacy for everyone", :name => "description"}/
+    %title= "self."
     = csrf_meta_tags
     = javascript_include_tag "application"
     = stylesheet_link_tag "application", :media => "all"
