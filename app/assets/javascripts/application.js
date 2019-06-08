@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.min
-//= require cocoon
 //= require twitter/bootstrap
 //= require underscore-min
 //= require underscore.string
