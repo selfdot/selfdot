@@ -1,8 +1,17 @@
 .mid_block
   .container
     .row
-      .col-md-3
-      .col-md-6
+      .col-md-1
+      .col-md-5
+        %h4 What are we doing?
+        %ul
+          %li
+            = link_to "self.conference", "https://selfconference.org"
+            = " - The software conference about tech and humans you already know and love!"
+          %li= "<title of conf> - Tech conference, the musical!"
+          %li self.work - A coworking space for us all to gather and work, at a price you can actually afford!
+          %li self.learn - Partnering up with shelters and community centers to bring basic computer and programming literacy to Detroit's underserved neighborhoods and homeless.
+      .col-md-5
         .blue_block.sign-up-box
           #mc_embed_signup
             %form#mc-embedded-subscribe-form.validate.form-horizontal{:action => "https://selfdot.us20.list-manage.com/subscribe/post?u=eb1abec9dec44e154607f6849&id=28ad18140a", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
