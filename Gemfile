@@ -8,7 +8,6 @@ gem "sendgrid"
 gem "bcrypt"
 gem "pg"
 
-gem "draper"
 
 gem "sass-rails"
 gem "uglifier"
@@ -16,8 +15,6 @@ gem "coffee-rails"
 gem "haml-rails"
 gem "jquery-rails"
 gem "twitter-bootstrap-rails"
-gem "jquery-datatables-rails"
-gem "react-rails"
 gem "cocoon"
 gem "momentjs-rails"
 
